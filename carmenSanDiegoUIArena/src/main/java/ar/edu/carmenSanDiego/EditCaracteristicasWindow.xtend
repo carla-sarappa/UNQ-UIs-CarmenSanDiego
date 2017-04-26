@@ -14,9 +14,7 @@ import org.eclipse.xtend.lib.annotations.Accessors
 
 @Accessors
 
-class EditCaracteristicasWindow extends EditPaisPropertiesWindow<Caracteristica> {
-	
-	
+class EditCaracteristicasWindow extends EditModelPropertyWindow<Caracteristica, Pais> {
 	new(WindowOwner parent, EditCaracteristicasViewModel model) {
 		super(parent, model)
 	}
@@ -26,7 +24,7 @@ class EditCaracteristicasWindow extends EditPaisPropertiesWindow<Caracteristica>
 	}
 	
 	override elemento() {
-		return "pais.caracteristicas"
+		return "container.caracteristicas"
 		}
 	
 	override clazz() {

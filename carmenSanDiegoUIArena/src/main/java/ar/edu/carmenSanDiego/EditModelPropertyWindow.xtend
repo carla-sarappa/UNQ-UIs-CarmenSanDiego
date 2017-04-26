@@ -14,13 +14,13 @@ import org.eclipse.xtend.lib.annotations.Accessors
 
 @Accessors
 
-abstract class EditPaisPropertiesWindow<T> extends Dialog<EditPaisPropertiesViewModel<T>> {
+abstract class EditModelPropertyWindow<T,R> extends Dialog<EditModelPropertyViewModel<T,R>> {
 	def abstract String titulo()
     def abstract String elemento()
     def abstract Class<T> clazz()
     
 	
-	new(WindowOwner parent, EditPaisPropertiesViewModel<T> model) {
+	new(WindowOwner parent, EditModelPropertyViewModel<T,R> model) {
 		super(parent, model)
 		title = "Editar " + titulo()		
 	}

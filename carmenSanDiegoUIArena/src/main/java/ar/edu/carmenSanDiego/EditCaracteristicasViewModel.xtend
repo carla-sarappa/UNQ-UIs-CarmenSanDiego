@@ -1,6 +1,6 @@
 package ar.edu.carmenSanDiego
 
-class EditCaracteristicasViewModel extends EditPaisPropertiesViewModel<Caracteristica> {
+class EditCaracteristicasViewModel extends EditModelPropertyViewModel<Caracteristica, Pais> {
 	
 	new(Pais pais) {
 		super(pais)
@@ -8,12 +8,12 @@ class EditCaracteristicasViewModel extends EditPaisPropertiesViewModel<Caracteri
 	}
 	
 	override def void removerElemento(Caracteristica caracteristicaSeleccionada) {
-		pais.removerCaracteristica(caracteristicaSeleccionada)
+		getContainer.removerCaracteristica(caracteristicaSeleccionada)
 	}
 	
 	override def void agregarElemento(Caracteristica caracteristica){
 		
-		pais.addCaracteristica(caracteristica)
+		getContainer.addCaracteristica(caracteristica)
 		nuevoElemento = new Caracteristica("")
 
 	}

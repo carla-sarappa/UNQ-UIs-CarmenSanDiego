@@ -4,7 +4,7 @@ import java.util.ArrayList
 import org.eclipse.xtend.lib.annotations.Accessors
 
 @Accessors
-class EditLugaresInteresViewModel extends EditPaisPropertiesViewModel<LugarInteres> {
+class EditLugaresInteresViewModel extends EditModelPropertyViewModel<LugarInteres, Pais> {
 	List<LugarInteres> lugaresDisponibles = new ArrayList<LugarInteres>()
 	
 	new(Pais pais) {
@@ -13,11 +13,11 @@ class EditLugaresInteresViewModel extends EditPaisPropertiesViewModel<LugarInter
 	}
 	
 	override def void removerElemento(LugarInteres lugarSeleccionado) {
-		pais.removerLugarInteres(lugarSeleccionado)
+		getContainer.removerLugarInteres(lugarSeleccionado)
 	}
 	
 	override agregarElemento(LugarInteres nuevoElemento) {
-		pais.addLugarInteres(nuevoElemento)
+		getContainer.addLugarInteres(nuevoElemento)
 		populateLugares()
 	}
 	

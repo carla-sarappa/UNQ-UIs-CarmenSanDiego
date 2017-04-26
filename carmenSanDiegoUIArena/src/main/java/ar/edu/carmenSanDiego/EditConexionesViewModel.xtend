@@ -2,18 +2,18 @@ package ar.edu.carmenSanDiego
 
 import java.util.List
 
-class EditConexionesViewModel extends EditPaisPropertiesViewModel<Pais> {
+class EditConexionesViewModel extends EditModelPropertyViewModel<Pais, Pais> {
 	
 	new(Pais pais) {
 		super(pais)
 	}
 	
 	override def void removerElemento(Pais conexionSeleccionada) {
-		pais.removerConexion(conexionSeleccionada)
+		getContainer.removerConexion(conexionSeleccionada)
 	}
 	
 	override agregarElemento(Pais nuevoElemento) {
-		pais.addConexion(nuevoElemento)
+		getContainer.addConexion(nuevoElemento)
 	}
 	
 	def List<Pais> paises(){

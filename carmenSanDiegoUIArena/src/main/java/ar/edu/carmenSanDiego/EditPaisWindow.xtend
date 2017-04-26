@@ -3,13 +3,13 @@ package ar.edu.carmenSanDiego
 import org.uqbar.arena.windows.SimpleWindow
 import org.uqbar.arena.widgets.Panel
 import org.uqbar.arena.windows.WindowOwner
-
 import org.uqbar.arena.widgets.Button
 import org.uqbar.arena.windows.Dialog
 import org.uqbar.arena.widgets.Label
 import org.uqbar.arena.widgets.TextBox
 import org.uqbar.arena.layout.HorizontalLayout
 import ar.edu.carmenSanDiego.widgets.GameTable
+import org.uqbar.lacar.ui.model.Action
 
 class EditPaisWindow<T extends EditPaisViewModel> extends Dialog<T> {
 	
@@ -39,63 +39,47 @@ class EditPaisWindow<T extends EditPaisViewModel> extends Dialog<T> {
 		new Label(nombrePanel).text = "Nombre: "	
 		new TextBox(nombrePanel).bindValueToProperty("pais.nombre")
 		
-		var caracteristicasPanel = new Panel(mainPanel)
-		caracteristicasPanel.layout = new HorizontalLayout
-		new Label(caracteristicasPanel).text = "Caracteristicas"
-		new Button(caracteristicasPanel) => [
-		    caption = "Editar caracteristicas"
-		    setAsDefault
-		    onClick [  | 
-		    	val dialog =  new EditCaracteristicasWindow(this, new EditCaracteristicasViewModel(modelObject.pais))
+		EditableList.renderizar(mainPanel, "Caracteristicas", typeof(Caracteristica), "pais.caracteristicas")[
+			val dialog =  new EditCaracteristicasWindow(this, new EditCaracteristicasViewModel(modelObject.pais))
 		    	dialog.onAccept [ | modelObject.refresh]
 		    	dialog.open
-		    ]
-		]	
+		]
+
+		EditableList.renderizar(mainPanel, "Conexiones", typeof(Pais), "pais.conexiones")[
+			val dialog =  new EditConexionesWindow(this, new EditConexionesViewModel(modelObject.pais))		    
+		    	dialog.onAccept [ | modelObject.refresh]
+		    	dialog.open
+		]
 		
-		 
-		GameTable.crear(mainPanel, typeof(Caracteristica)) => [
-    		tituloTabla = "Caracteristicas"
-    		atributo = "pais.caracteristicas"
-    		bind()	
-    	]
-    	
-    	var conexionesPanel = new Panel(mainPanel)
-		conexionesPanel.layout = new HorizontalLayout
-		new Label(conexionesPanel).text = "Conexiones"
-		new Button(conexionesPanel) => [
-		    caption = "Editar conexiones"
-		    setAsDefault
-			onClick [  | 
-				val dialog =  new EditConexionesWindow(this, new EditConexionesViewModel(modelObject.pais))		    
+
+		EditableList.renderizar(mainPanel, "Lugares de interes", typeof(Pais), "pais.lugaresInteres")[
+			val dialog =  new EditLugaresInteresWindow(this, new EditLugaresInteresViewModel(modelObject.pais))		    
 		    	dialog.onAccept [ | modelObject.refresh]
 		    	dialog.open
-		    ]
-		]	
-		 
-		GameTable.crear(mainPanel, typeof(Pais)) => [
-    		tituloTabla = "Conexiones"
-    		atributo = "pais.conexiones"
-    		bind()	
-    	]
-    	
-    	var lugarInteresPanel = new Panel(mainPanel)
-		lugarInteresPanel.layout = new HorizontalLayout
-		new Label(lugarInteresPanel).text = "Lugares de interes"
-		new Button(lugarInteresPanel) => [
-		    caption = "Editar lugares"
-		    setAsDefault
-		    onClick [  | 
-				val dialog =  new EditLugaresInteresWindow(this, new EditLugaresInteresViewModel(modelObject.pais))		    
-		    	dialog.onAccept [ | modelObject.refresh]
-		    	dialog.open
-		    ]
-		 ]	
-		 
-		 GameTable.crear(mainPanel, typeof(LugarInteres)) => [
-    		tituloTabla = "Lugares de Interes"
-    		atributo = "pais.lugaresInteres"
-    		bind()	
-    	]
+		]
+		
 	}
 	
+}
+
+class EditableList {
+	def static void renderizar(Panel mainPanel, String nombrePanel, Class clazz, String tableAttr, Action action){
+		
+		var panel = new Panel(mainPanel)
+		panel.layout = new HorizontalLayout
+		new Label(panel).text = nombrePanel
+		new Button(panel) => [
+		    caption = "Editar " + nombrePanel
+		    setAsDefault
+		    onClick(action)
+		]
+		
+		GameTable.crear(mainPanel, clazz) => [
+    		tituloTabla = nombrePanel
+    		atributo = tableAttr
+    		bind()	
+    	]
+		
+	}
+
 }

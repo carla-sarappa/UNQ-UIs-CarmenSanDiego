@@ -13,7 +13,7 @@ import ar.edu.carmenSanDiego.widgets.GameTable
 import org.uqbar.arena.widgets.Selector
 import org.uqbar.arena.bindings.PropertyAdapter
 
-class EditConexionesWindow extends EditPaisPropertiesWindow<Pais> {	
+class EditConexionesWindow extends EditModelPropertyWindow<Pais, Pais> {	
 	new(WindowOwner parent, EditConexionesViewModel model) {
 		super(parent, model)
 	}
@@ -23,7 +23,7 @@ class EditConexionesWindow extends EditPaisPropertiesWindow<Pais> {
 	}
 	
 	override elemento() {
-		return "pais.conexiones"
+		return "container.conexiones"
 		}
 	
 	override clazz() {

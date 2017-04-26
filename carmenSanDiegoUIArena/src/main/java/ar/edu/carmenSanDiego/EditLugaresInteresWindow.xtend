@@ -13,7 +13,7 @@ import ar.edu.carmenSanDiego.widgets.GameTable
 import org.uqbar.arena.widgets.Selector
 import org.uqbar.arena.bindings.PropertyAdapter
 
-class EditLugaresInteresWindow extends EditPaisPropertiesWindow<LugarInteres> {	
+class EditLugaresInteresWindow extends EditModelPropertyWindow<LugarInteres, Pais> {	
 	new(WindowOwner parent, EditLugaresInteresViewModel model) {
 		super(parent, model)
 	}
@@ -23,7 +23,7 @@ class EditLugaresInteresWindow extends EditPaisPropertiesWindow<LugarInteres> {
 	}
 	
 	override elemento() {
-		return "pais.lugaresInteres"
+		return "container.lugaresInteres"
 		}
 	
 	override clazz() {

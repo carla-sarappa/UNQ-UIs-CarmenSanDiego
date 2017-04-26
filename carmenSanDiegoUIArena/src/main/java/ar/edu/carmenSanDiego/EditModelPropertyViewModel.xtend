@@ -9,26 +9,30 @@ import org.uqbar.commons.model.ObservableUtils
 @TransactionalAndObservable
 @Accessors
 
-abstract class EditPaisPropertiesViewModel<T> {
+abstract class EditModelPropertyViewModel<T, R> {
 	T elementoSeleccionado
-	Pais pais
+	R container
 	T nuevoElemento
 	
-	new(Pais pais) {
-		this.pais = pais
+	new(R container) {
+		this.container = container
 	}
 	
 	def eliminarElementoSeleccionado(){
 		removerElemento(elementoSeleccionado)
-		ObservableUtils.firePropertyChanged(this, "pais", getPais())
 	}
 	
 	def agregarNuevoElemento(){
 		agregarElemento(nuevoElemento)
-		ObservableUtils.firePropertyChanged(this, "pais", getPais())
+		refresh()
 	}
 	
 	def abstract void removerElemento(T elementoSeleccionado)
 	def abstract void agregarElemento(T nuevoElemento)
+	
+	def refresh(){
+		ObservableUtils.firePropertyChanged(this, "container", getContainer())
+		
+	}
 	
 }
