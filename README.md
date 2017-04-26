@@ -1,7 +1,6 @@
 # UNQ-UIs-CarmenSanDiego
 
 ¿Dónde está Carmen Sandiego?
-Imagen-Carmen-San-Diego
 Hoy nos encontramos con un problema que muchos otros enfrentaron antes.
 
 Queremos saber ¿Dónde está Carmen Sandiego?
@@ -14,29 +13,7 @@ Carmen Sandiego es una reconocida (y peligrosa) criminal internacional que recor
 El objetivo de todo agente internacional es atraparla y así terminar con la serie de fechorías.
 Junto a ella operan un conjunto de malhechores (de menor peligrosidad) generando caos en el mundo.
 En el juego el jugador es un detective que se dedica a atrapar a los delicuentes viajando por el mundo y resolviendo los misterios que se presentan.
-CONTENIDOS
-1 Dominio del Problema
-2 TP 1 - Arena
-2.1 Menú de acciones
-2.2 Mapamundi
-2.2.1 Nuevo País
-2.2.2 Editar País
-2.3 Expedientes
-2.3.1 Nuevo Villano
-2.3.2 Editar Villano
-2.3.3 Editar Señas Particulares
-2.3.4 Editar Hobbies
-2.4 Inicio de juego
-2.5 Resolver Misterio
-2.6 Orden de arresto
-2.7 Viajar
-2.8 Lugares
-2.9 Fin del Juego
-3 TP 2 - Angular + XtRest
-3.1 Parte 1
-3.1.1 Llamadas al servidor
-3.2 Parte 2
-4 TP 3 - Android
+
 Dominio del Problema
 
 Principalmente están los Villanos, que son quienes cometen los delitos. 
