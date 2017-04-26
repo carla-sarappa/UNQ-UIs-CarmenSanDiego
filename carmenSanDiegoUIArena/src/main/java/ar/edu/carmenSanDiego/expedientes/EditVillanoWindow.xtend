@@ -37,6 +37,12 @@ class EditVillanoWindow<T extends EditVillanoViewModel> extends Dialog<T>  {
 		new Label(nombrePanel).text = "Nombre: "	
 		new TextBox(nombrePanel).bindValueToProperty("villano.nombre")
 		
+		var sexoPanel = new Panel(mainPanel)
+		sexoPanel.layout = new HorizontalLayout
+		new Label(sexoPanel).text = "Sexo: "	
+		new TextBox(sexoPanel).bindValueToProperty("villano.sexo")
+		
+		
 		EditableList.renderizar(mainPanel, "Senias Particulares", typeof(Senia), "villano.seniasParticulares")[
 			val dialog =  new EditSeniasWindow(this, new EditSeniasViewModel(modelObject.villano))
 		    	dialog.onAccept [ | modelObject.refresh]
