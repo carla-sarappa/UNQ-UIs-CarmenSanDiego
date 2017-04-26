@@ -10,6 +10,8 @@ import org.uqbar.arena.widgets.Label
 import org.uqbar.arena.widgets.TextBox
 import org.uqbar.arena.layout.HorizontalLayout
 import ar.edu.carmenSanDiego.widgets.GameTable
+import org.uqbar.arena.widgets.Selector
+import org.uqbar.arena.bindings.PropertyAdapter
 
 class EditConexionesWindow extends EditPaisPropertiesWindow<Pais> {	
 	new(WindowOwner parent, EditConexionesViewModel model) {
@@ -26,6 +28,16 @@ class EditConexionesWindow extends EditPaisPropertiesWindow<Pais> {
 	
 	override clazz() {
 		return typeof(Pais)
+	}
+	
+	override def createAddPanel(Panel panel){
+		new Selector<Pais>(panel)	=> [
+		 	allowNull(false)
+		 	width = 300
+		 	bindValueToProperty("nuevoElemento")
+		 	var property = bindItemsToProperty("paises")
+		 	property.adapter = new PropertyAdapter(typeof(Pais), "nombre")
+		 ]
 	}
 	
 }

@@ -1,5 +1,7 @@
 package ar.edu.carmenSanDiego
 
+import java.util.List
+
 class EditConexionesViewModel extends EditPaisPropertiesViewModel<Pais> {
 	
 	new(Pais pais) {
@@ -10,8 +12,12 @@ class EditConexionesViewModel extends EditPaisPropertiesViewModel<Pais> {
 		pais.removerConexion(conexionSeleccionada)
 	}
 	
-	override agregarElemento(String nuevoElemento) {
-		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+	override agregarElemento(Pais nuevoElemento) {
+		pais.addConexion(nuevoElemento)
+	}
+	
+	def List<Pais> paises(){
+		return PaisRepository.getInstance().all()
 	}
 	
 }

@@ -4,14 +4,17 @@ class EditCaracteristicasViewModel extends EditPaisPropertiesViewModel<Caracteri
 	
 	new(Pais pais) {
 		super(pais)
+		this.nuevoElemento = new Caracteristica("")
 	}
 	
 	override def void removerElemento(Caracteristica caracteristicaSeleccionada) {
 		pais.removerCaracteristica(caracteristicaSeleccionada)
 	}
 	
-	override def void agregarElemento(String descripcion){
+	override def void agregarElemento(Caracteristica caracteristica){
 		
-		pais.addCaracteristica(new Caracteristica(descripcion))
+		pais.addCaracteristica(caracteristica)
+		nuevoElemento = new Caracteristica("")
+
 	}
 }

@@ -39,14 +39,15 @@ class EditPaisWindow extends Dialog<EditPaisViewModel> {
 		new Button(caracteristicasPanel) => [
 		    caption = "Editar caracteristicas"
 		    setAsDefault
-		    val dialog =  new EditCaracteristicasWindow(this, new EditCaracteristicasViewModel(modelObject.pais))
-		    onClick [  | dialog.onAccept [ | modelObject.refresh]
-		    			dialog.open
+		    onClick [  | 
+		    	val dialog =  new EditCaracteristicasWindow(this, new EditCaracteristicasViewModel(modelObject.pais))
+		    	dialog.onAccept [ | modelObject.refresh]
+		    	dialog.open
 		    ]
-		 ]	
+		]	
+		
 		 
-		 
-		 GameTable.crear(mainPanel, typeof(Caracteristica)) => [
+		GameTable.crear(mainPanel, typeof(Caracteristica)) => [
     		tituloTabla = "Caracteristicas"
     		atributo = "pais.caracteristicas"
     		bind()	
@@ -58,12 +59,14 @@ class EditPaisWindow extends Dialog<EditPaisViewModel> {
 		new Button(conexionesPanel) => [
 		    caption = "Editar conexiones"
 		    setAsDefault
-		    val dialog =  new EditConexionesWindow(this, new EditConexionesViewModel(modelObject.pais))
-		    onClick [  | dialog.onAccept [ | modelObject.refresh]
-		    			dialog.open]
-		 ]	
+			onClick [  | 
+				val dialog =  new EditConexionesWindow(this, new EditConexionesViewModel(modelObject.pais))		    
+		    	dialog.onAccept [ | modelObject.refresh]
+		    	dialog.open
+		    ]
+		]	
 		 
-		 GameTable.crear(mainPanel, typeof(Pais)) => [
+		GameTable.crear(mainPanel, typeof(Pais)) => [
     		tituloTabla = "Conexiones"
     		atributo = "pais.conexiones"
     		bind()	

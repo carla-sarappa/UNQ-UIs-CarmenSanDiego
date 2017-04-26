@@ -36,7 +36,7 @@ class EditCaracteristicasWindow extends EditPaisPropertiesWindow<Caracteristica>
 	override def createAddPanel(Panel panel){
 		 new TextBox(panel)	=> [
 		 	width = 300
-		 	bindValueToProperty("nuevoElemento")
+		 	bindValueToProperty("nuevoElemento.nombre")
 		 ]
 	}
 }

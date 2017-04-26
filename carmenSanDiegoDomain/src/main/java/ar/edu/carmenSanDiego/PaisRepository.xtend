@@ -10,9 +10,6 @@ class PaisRepository {
 	static val PaisRepository instance = new PaisRepository
 	List<Pais> paises = new ArrayList<Pais>()
 	
-	Object Collectors
-
-	
 	def add(Pais pais){
 		paises.add(pais)
 	}

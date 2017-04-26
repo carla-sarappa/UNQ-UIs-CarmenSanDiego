@@ -33,11 +33,11 @@ class Pais {
 	}
 	
 	def removerCaracteristica(Caracteristica caracteristica) {
-		ListasUtil.eliminar(caracteristicas, caracteristica)
+		caracteristicas = ListasUtil.eliminar(caracteristicas, caracteristica)
 	}	
 	
 	def removerConexion(Pais conexion) {
-		ListasUtil.eliminar(conexiones, conexion)
+		conexiones = ListasUtil.eliminar(conexiones, conexion)
 	}	
 	
 

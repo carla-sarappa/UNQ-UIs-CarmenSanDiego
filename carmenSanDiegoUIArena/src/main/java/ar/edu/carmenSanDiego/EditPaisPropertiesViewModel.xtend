@@ -12,7 +12,7 @@ import org.uqbar.commons.model.ObservableUtils
 abstract class EditPaisPropertiesViewModel<T> {
 	T elementoSeleccionado
 	Pais pais
-	String nuevoElemento
+	T nuevoElemento
 	
 	new(Pais pais) {
 		this.pais = pais
@@ -31,6 +31,6 @@ abstract class EditPaisPropertiesViewModel<T> {
 	}
 	
 	def abstract void removerElemento(T elementoSeleccionado)
-	def abstract void agregarElemento(String nuevoElemento)
+	def abstract void agregarElemento(T nuevoElemento)
 	
 }
