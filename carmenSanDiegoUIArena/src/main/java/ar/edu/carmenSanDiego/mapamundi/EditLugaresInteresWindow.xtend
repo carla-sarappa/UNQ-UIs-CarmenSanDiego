@@ -1,4 +1,4 @@
- package ar.edu.carmenSanDiego
+ package ar.edu.carmenSanDiego.mapamundi
 
 import org.uqbar.arena.windows.SimpleWindow
 import org.uqbar.arena.widgets.Panel
@@ -12,6 +12,7 @@ import org.uqbar.arena.layout.HorizontalLayout
 import ar.edu.carmenSanDiego.widgets.GameTable
 import org.uqbar.arena.widgets.Selector
 import org.uqbar.arena.bindings.PropertyAdapter
+import ar.edu.carmenSanDiego.EditModelPropertyWindow
 
 class EditLugaresInteresWindow extends EditModelPropertyWindow<LugarInteres, Pais> {	
 	new(WindowOwner parent, EditLugaresInteresViewModel model) {

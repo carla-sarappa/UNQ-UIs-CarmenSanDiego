@@ -1,4 +1,4 @@
-package ar.edu.carmenSanDiego
+package ar.edu.carmenSanDiego.mapamundi
 
 import org.uqbar.arena.windows.WindowOwner
 

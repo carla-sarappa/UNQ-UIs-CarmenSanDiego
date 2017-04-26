@@ -1,6 +1,7 @@
-package ar.edu.carmenSanDiego
+package ar.edu.carmenSanDiego.mapamundi
 
 import java.util.List
+import ar.edu.carmenSanDiego.EditModelPropertyViewModel
 
 class EditConexionesViewModel extends EditModelPropertyViewModel<Pais, Pais> {
 	

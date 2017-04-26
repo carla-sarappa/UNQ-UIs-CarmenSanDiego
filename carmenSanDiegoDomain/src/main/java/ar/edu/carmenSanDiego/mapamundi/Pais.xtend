@@ -1,9 +1,10 @@
-package ar.edu.carmenSanDiego
+package ar.edu.carmenSanDiego.mapamundi
 
 import org.eclipse.xtend.lib.annotations.Accessors
 import org.uqbar.commons.utils.TransactionalAndObservable
 import java.util.List
 import java.util.ArrayList
+import ar.edu.carmenSanDiego.ListasUtil
 
 @TransactionalAndObservable
 @Accessors

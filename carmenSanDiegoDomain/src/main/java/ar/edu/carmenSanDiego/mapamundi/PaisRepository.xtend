@@ -1,10 +1,11 @@
-package ar.edu.carmenSanDiego
+package ar.edu.carmenSanDiego.mapamundi
 
 import org.uqbar.commons.utils.TransactionalAndObservable
 import org.eclipse.xtend.lib.annotations.Accessors
 import java.util.List
 import java.util.ArrayList
 import java.util.Iterator
+import ar.edu.carmenSanDiego.ListasUtil
 
 class PaisRepository {
 	static val PaisRepository instance = new PaisRepository

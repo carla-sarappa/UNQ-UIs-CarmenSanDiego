@@ -1,7 +1,8 @@
-package ar.edu.carmenSanDiego
+package ar.edu.carmenSanDiego.mapamundi
 import java.util.List
 import java.util.ArrayList
 import org.eclipse.xtend.lib.annotations.Accessors
+import ar.edu.carmenSanDiego.EditModelPropertyViewModel
 
 @Accessors
 class EditLugaresInteresViewModel extends EditModelPropertyViewModel<LugarInteres, Pais> {

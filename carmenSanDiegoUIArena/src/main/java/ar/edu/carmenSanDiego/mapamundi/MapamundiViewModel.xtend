@@ -1,4 +1,4 @@
-package ar.edu.carmenSanDiego
+package ar.edu.carmenSanDiego.mapamundi
 
 import org.eclipse.xtend.lib.annotations.Accessors
 import org.uqbar.commons.utils.TransactionalAndObservable
@@ -8,7 +8,6 @@ import org.uqbar.commons.model.ObservableUtils
 @TransactionalAndObservable
 @Accessors
 class MapamundiViewModel {
-	String saludo = "Hola Mundo"
 	Pais paisSeleccionado
 	
 	def List<Pais> getPaises(){

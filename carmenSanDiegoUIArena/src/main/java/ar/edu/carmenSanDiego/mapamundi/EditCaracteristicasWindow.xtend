@@ -1,4 +1,4 @@
- package ar.edu.carmenSanDiego
+package ar.edu.carmenSanDiego.mapamundi
 
 import org.uqbar.arena.windows.SimpleWindow
 import org.uqbar.arena.widgets.Panel
@@ -10,34 +10,32 @@ import org.uqbar.arena.widgets.Label
 import org.uqbar.arena.widgets.TextBox
 import org.uqbar.arena.layout.HorizontalLayout
 import ar.edu.carmenSanDiego.widgets.GameTable
-import org.uqbar.arena.widgets.Selector
-import org.uqbar.arena.bindings.PropertyAdapter
+import org.eclipse.xtend.lib.annotations.Accessors
+import ar.edu.carmenSanDiego.EditModelPropertyWindow
 
-class EditConexionesWindow extends EditModelPropertyWindow<Pais, Pais> {	
-	new(WindowOwner parent, EditConexionesViewModel model) {
+@Accessors
+
+class EditCaracteristicasWindow extends EditModelPropertyWindow<Caracteristica, Pais> {
+	new(WindowOwner parent, EditCaracteristicasViewModel model) {
 		super(parent, model)
 	}
 	
 	override titulo() {
-		return "Conexiones"
+		return "Caracteristicas"
 	}
 	
 	override elemento() {
-		return "container.conexiones"
+		return "container.caracteristicas"
 		}
 	
 	override clazz() {
-		return typeof(Pais)
+		return typeof(Caracteristica)
 	}
 	
 	override def createAddPanel(Panel panel){
-		new Selector<Pais>(panel)	=> [
-		 	allowNull(false)
+		 new TextBox(panel)	=> [
 		 	width = 300
-		 	bindValueToProperty("nuevoElemento")
-		 	var property = bindItemsToProperty("paises")
-		 	property.adapter = new PropertyAdapter(typeof(Pais), "nombre")
+		 	bindValueToProperty("nuevoElemento.nombre")
 		 ]
 	}
-	
 }

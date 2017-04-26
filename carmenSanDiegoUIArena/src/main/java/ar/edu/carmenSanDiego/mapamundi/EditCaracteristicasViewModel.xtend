@@ -1,4 +1,6 @@
-package ar.edu.carmenSanDiego
+package ar.edu.carmenSanDiego.mapamundi
+
+import ar.edu.carmenSanDiego.EditModelPropertyViewModel
 
 class EditCaracteristicasViewModel extends EditModelPropertyViewModel<Caracteristica, Pais> {
 	

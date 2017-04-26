@@ -5,13 +5,14 @@ import static org.hamcrest.CoreMatchers.*
 import org.junit.Test
 import java.util.List
 import java.util.ArrayList
+import ar.edu.carmenSanDiego.mapamundi.Embajada
 
 class LugaresInteresTest {
 	
 	@Test
-	def embajadaTestito(){
+	def embajadaTest(){
 //		cuando tiene información del malechor da 2 pistas relacionadas con el destino del villano
-		val embajada = new Embajada()
+		val embajada = new Embajada("embajada")
 		val pista1 = new Pista("destino", "se fue a Argentina")
 		val pista2 = new Pista("destino", "se fue a Uruguay")
 		val pista3 = new Pista("destino", "se fue a Uruguay")

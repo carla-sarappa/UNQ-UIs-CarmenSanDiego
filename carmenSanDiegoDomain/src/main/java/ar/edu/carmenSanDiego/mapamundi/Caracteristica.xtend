@@ -1,4 +1,4 @@
-package ar.edu.carmenSanDiego
+package ar.edu.carmenSanDiego.mapamundi
 
 import org.uqbar.commons.utils.TransactionalAndObservable
 import org.eclipse.xtend.lib.annotations.Accessors
