@@ -7,13 +7,11 @@ import org.uqbar.arena.layout.VerticalLayout
 import org.uqbar.arena.widgets.Label
 import org.uqbar.arena.layout.HorizontalLayout
 import ar.edu.carmenSanDiego.widgets.GameTable
-import ar.edu.carmenSanDiego.Villano
-import ar.edu.carmenSanDiego.Senia
-import ar.edu.carmenSanDiego.Hobby
+import ar.edu.carmenSanDiego.expedientes.*
 
-class ExpedientesWindow extends Window<ExpedientesViewModel> {
+class ExpedientesWindow<T extends ExpedientesViewModel> extends Window<T> {
 	
-	new(WindowOwner owner, ExpedientesViewModel expedientesViewModel) {
+	new(WindowOwner owner, T expedientesViewModel) {
 		super(owner, expedientesViewModel)
 		title = "Expedientes"
 	}
@@ -33,6 +31,7 @@ class ExpedientesWindow extends Window<ExpedientesViewModel> {
     	
     	var actionsPanel = new Panel(listPanel)
     	actionsPanel.layout = new VerticalLayout
+    	crearBotones(actionsPanel)    	
     	
 		var detallePanel = new Panel(horizontalPanel)
 		detallePanel.layout = new VerticalLayout
@@ -62,8 +61,9 @@ class ExpedientesWindow extends Window<ExpedientesViewModel> {
     		atributo = "villanoSeleccionado.hobbies"  	
     		bind()	
     	]	
+    	
 	}
 	
-	def crearBotones(){}
+	def crearBotones(Panel panel){}
 }
 

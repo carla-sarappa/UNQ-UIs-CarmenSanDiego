@@ -4,7 +4,7 @@ import org.uqbar.commons.utils.TransactionalAndObservable
 import java.util.ArrayList
 import java.util.List
 import ar.edu.carmenSanDiego.ListasUtil
-import ar.edu.carmenSanDiego.Villano
+import ar.edu.carmenSanDiego.expedientes.Villano
 import org.eclipse.xtend.lib.annotations.Accessors
 
 @Accessors

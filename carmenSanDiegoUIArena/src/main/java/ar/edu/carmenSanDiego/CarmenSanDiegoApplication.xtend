@@ -2,10 +2,7 @@ package ar.edu.carmenSanDiego
 
 import ar.edu.carmenSanDiego.mapamundi.*
 import org.uqbar.arena.Application
-import ar.edu.carmenSanDiego.expedientes.ExpedienteRepository
-import ar.edu.carmenSanDiego.expedientes.ExpedientesViewModel
-import ar.edu.carmenSanDiego.expedientes.ExpedientesWindow
-
+import ar.edu.carmenSanDiego.expedientes.*
 class CarmenSanDiegoApplication extends Application {
 	
 	override createMainWindow() {
@@ -30,7 +27,8 @@ class CarmenSanDiegoApplication extends Application {
 		)
 	
 		//new MapamundiWindow(this, new MapamundiViewModel)
-		new ExpedientesWindow(this, new ExpedientesViewModel)
+		//new ExpedientesWindow(this, new ExpedientesViewModel)
+		new MainGameWindow(this, new MainGameViewModel)
 	}
 	
 	def static main(String[] args) {

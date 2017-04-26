@@ -12,9 +12,5 @@ class NuevoPaisWindow extends EditPaisWindow<NuevoPaisViewModel> {
 	
 	override def beforeAccept(){
 		modelObject.guardar()
-	
-	}
-	
-	
-	
+	}	
 }

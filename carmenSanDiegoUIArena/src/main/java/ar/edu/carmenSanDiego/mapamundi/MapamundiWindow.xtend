@@ -42,7 +42,6 @@ class MapamundiWindow extends Window<MapamundiViewModel> {
 		    setAsDefault
 		    onClick [  | modelObject.eliminarPais() ]
 		    bindEnabled(elementSelected)
-		    
 		 ]
 		 
 		new Button(actionsPanel) => [
@@ -50,14 +49,12 @@ class MapamundiWindow extends Window<MapamundiViewModel> {
 		    setAsDefault
 		    onClick [ | this.abrirEditarPais()]
 		    bindEnabled(elementSelected)
-		    
 		]
 				 
 		new Button(actionsPanel) => [
 		    caption = "Nuevo"
 		    setAsDefault
 		    onClick [ | this.crearPais() ]
-		    
 		]
     	
 		var detallePanel = new Panel(horizontalPanel)
@@ -89,14 +86,12 @@ class MapamundiWindow extends Window<MapamundiViewModel> {
     		atributo = "paisSeleccionado.lugaresInteres" 
     		bind() 		
     	]
-		
 	}
 	
 	def openDialog(Dialog<?> dialog) {
 			dialog.open
-		}
+	}
 		
-
 	def void abrirEditarPais() {
 		this.openDialog(new EditPaisWindow(this, new EditPaisViewModel(modelObject.paisSeleccionado)))
 	}
