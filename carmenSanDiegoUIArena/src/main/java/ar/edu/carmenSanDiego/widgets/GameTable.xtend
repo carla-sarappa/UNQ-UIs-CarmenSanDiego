@@ -30,7 +30,6 @@ class GameTable<T> extends Table<T>{
 		bindItemsToProperty(atributo)
 		new Column<T>(this) => [
 		   title = tituloTabla
-		   fixedSize = 500
 		   bindContentsToProperty("nombre")
 		]
 		

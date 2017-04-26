@@ -17,16 +17,11 @@ class MapamundiViewModel {
 	
 	def eliminarPais(){
 		PaisRepository.getInstance().eliminar(paisSeleccionado)
-		ObservableUtils.firePropertyChanged(this, "paises", getPaises())
-		
+		refresh()		
 	}
 	
-	def editarPais(){
-		PaisRepository.getInstance().editar(paisSeleccionado)
+	def refresh(){
 		ObservableUtils.firePropertyChanged(this, "paises", getPaises())
-	}
-	
-	def nuevoPais(){
 		
 	}
 	

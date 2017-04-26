@@ -22,10 +22,6 @@ class PaisRepository {
 		paises = ListasUtil.eliminar(paises, pais)
 	}
 	
-	def editar(Pais pais){
-		
-	}
-	
 	def static PaisRepository getInstance() {
 		return instance
 	}

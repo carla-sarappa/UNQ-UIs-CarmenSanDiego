@@ -11,10 +11,10 @@ import org.uqbar.arena.widgets.TextBox
 import org.uqbar.arena.layout.HorizontalLayout
 import ar.edu.carmenSanDiego.widgets.GameTable
 
-class EditPaisWindow extends Dialog<EditPaisViewModel> {
+class EditPaisWindow<T extends EditPaisViewModel> extends Dialog<T> {
 	
 		
-	new(WindowOwner parent, EditPaisViewModel model) {
+	new(WindowOwner parent, T model) {
 		super(parent, model)
 		title = "Mapamundi - Editar Pais"		
 	}
@@ -23,8 +23,14 @@ class EditPaisWindow extends Dialog<EditPaisViewModel> {
 		new Button(actionsPanel) => [
 		    caption = "Aceptar"
 		    setAsDefault
-		    onClick [ | this.close ]
+		    onClick [ | this.beforeAccept
+		    			this.accept
+		    ]
 		 ]	
+	}
+	
+	def beforeAccept(){
+		
 	}
 	
 	override protected createFormPanel(Panel mainPanel) {
