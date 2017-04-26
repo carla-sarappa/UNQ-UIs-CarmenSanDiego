@@ -78,7 +78,11 @@ class EditPaisWindow extends Dialog<EditPaisViewModel> {
 		new Button(lugarInteresPanel) => [
 		    caption = "Editar lugares"
 		    setAsDefault
-		    onClick [  | ]
+		    onClick [  | 
+				val dialog =  new EditLugaresInteresWindow(this, new EditLugaresInteresViewModel(modelObject.pais))		    
+		    	dialog.onAccept [ | modelObject.refresh]
+		    	dialog.open
+		    ]
 		 ]	
 		 
 		 GameTable.crear(mainPanel, typeof(LugarInteres)) => [

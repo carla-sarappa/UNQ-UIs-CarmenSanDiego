@@ -57,7 +57,6 @@ class MapamundiWindow extends Window<MapamundiViewModel> {
 		    caption = "Nuevo"
 		    setAsDefault
 		    onClick [ | modelObject.nuevoPais() ]
-		    bindEnabled(elementSelected)
 		    
 		]
     	

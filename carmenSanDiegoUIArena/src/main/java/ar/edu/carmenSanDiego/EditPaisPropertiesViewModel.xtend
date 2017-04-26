@@ -21,13 +21,11 @@ abstract class EditPaisPropertiesViewModel<T> {
 	def eliminarElementoSeleccionado(){
 		removerElemento(elementoSeleccionado)
 		ObservableUtils.firePropertyChanged(this, "pais", getPais())
-		
 	}
 	
 	def agregarNuevoElemento(){
 		agregarElemento(nuevoElemento)
 		ObservableUtils.firePropertyChanged(this, "pais", getPais())
-		
 	}
 	
 	def abstract void removerElemento(T elementoSeleccionado)

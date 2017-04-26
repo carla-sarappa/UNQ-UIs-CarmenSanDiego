@@ -40,6 +40,7 @@ class Pais {
 		conexiones = ListasUtil.eliminar(conexiones, conexion)
 	}	
 	
-
-
+	def removerLugarInteres(LugarInteres lugar) {
+		lugaresInteres = ListasUtil.eliminar(lugaresInteres, lugar)
+	}	
 }

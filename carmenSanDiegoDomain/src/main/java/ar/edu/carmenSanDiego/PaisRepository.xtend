@@ -19,7 +19,7 @@ class PaisRepository {
 	}
 	
 	def eliminar(Pais pais){
-		ListasUtil.eliminar(paises, pais)
+		paises = ListasUtil.eliminar(paises, pais)
 	}
 	
 	def editar(Pais pais){

@@ -11,10 +11,18 @@ class LugarInteres {
 	Ocupante ocupante
 	List<Pista> pistas
 	
-	
+		
+	new (String nombre){
+		this.nombre = nombre
+	}
 }
 
 class Embajada extends LugarInteres {
+	
+	new(String nombre) {
+		super(nombre)
+	}
+	
 	def List <Pista> damePistas(){
 		return pistas
 	}
@@ -22,14 +30,28 @@ class Embajada extends LugarInteres {
 }
 
 class Biblioteca extends LugarInteres{
+		
+	new(String nombre) {
+		super(nombre)
+	}
 	
 }
 
 class Banco extends LugarInteres{
+		
+	new(String nombre) {
+		super(nombre)
+	}
+	
 	
 }
 
 class Club extends LugarInteres{
+		
+	new(String nombre) {
+		super(nombre)
+	}
+	
 	
 }
 
